@@ -1,0 +1,45 @@
+<mat-card class="customer-form">
+  <mat-card-header class="customer-form-header">
+    <mat-card-title>Add Customer</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="form" (submit)="submit()">
+    <mat-card-content>
+      <mat-form-field class="customer-form-field" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required />
+        <mat-error *ngIf="form.get('firstName').hasError('required')">
+          First Name is required
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field class="customer-form-field" appearance="fill">
+        <mat-label>Middle Name</mat-label>
+        <input matInput formControlName="middleName" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field class="customer-form-field" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" required />
+        <mat-error *ngIf="form.get('lastName').hasError('required')">
+          Last Name is required
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field class="customer-form-field" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required placeholder="Ex. pat@example.com" />
+        <mat-error *ngIf="form.get('email').hasError('email') || form.get('email').hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-card-footer class="customer-form-footer">
+        <button class="customer-form-button" mat-flat-button color="primary" type="submit" [disabled]="form.invalid">Save</button>
+      </mat-card-footer>
+    </mat-card-content>
+  </form>
+</mat-card>

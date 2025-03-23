@@ -1,0 +1,23 @@
+.main-container {
+  padding: 4% 15% 0% 15%;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1;
+}
+
+a[mat-button],
+button[mat-button] {
+  margin-left: 10px;
+}

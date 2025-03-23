@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span class="toolbar-title">Customer Management</span>
+  <span class="spacer"></span>
+
+  <ng-container *ngIf="token$ | async as token; else loginLink">
+    <a mat-button routerLink="/customers">List</a>
+    <a mat-button routerLink="/customers/add">Add</a>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+
+  <ng-template #loginLink>
+    <button mat-flat-button routerLink="/login">Login</button>
+  </ng-template>
+</mat-toolbar>
+
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>
