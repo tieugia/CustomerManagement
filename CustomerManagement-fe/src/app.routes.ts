@@ -11,5 +11,13 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/customers/customers.routes').then(m => m.CUSTOMER_ROUTES)
   },
-  { path: '', redirectTo: '/customers', pathMatch: 'full' }
+  {
+    path: '',
+    redirectTo: 'customers',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'customers'
+  }
 ];

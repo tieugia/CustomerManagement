@@ -27,7 +27,6 @@ export class CustomerFormComponent {
             lastName: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]]
         });
-
     }
 
     submit() {

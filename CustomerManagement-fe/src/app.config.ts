@@ -41,4 +41,3 @@ export const appConfig: ApplicationConfig = {
     }
   ]
 };
-console.log('app.config.ts loaded');
