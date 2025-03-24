@@ -4,7 +4,6 @@ using CusstomerManagement.Application.DTOs;
 using CustomerManagement.Application.Interfaces.Repositories;
 using CustomerManagement.Application.Services;
 using CustomerManagement.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 
 namespace CustomerManagement.Application.Tests.Services;

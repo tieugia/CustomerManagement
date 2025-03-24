@@ -20,15 +20,17 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 export class CustomerFormComponent {
     form: any;
 
-    constructor(private fb: FormBuilder, private store: Store<CustomerState>) {
-        this.form = this.fb.group({
-            firstName: ['', Validators.required],
-            middleName: [''],
-            lastName: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]]
-        });
+    constructor(private fb: FormBuilder, private store: Store<CustomerState>) {        
     }
 
+    ngOnInit() {
+        this.form = this.fb.group({
+            name: ['', Validators.required],
+            email: ['', Validators.required],
+            phone: ['', Validators.required],
+        });
+    }
+    
     submit() {
         if (this.form.valid) {
             const customer: Customer = {
